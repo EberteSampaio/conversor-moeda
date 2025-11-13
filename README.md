@@ -25,9 +25,9 @@ O objetivo principal foi aplicar e solidificar os conhecimentos adquiridos no m�
 
 ## Tecnologias Utilizadas
 
-* **Java:** Linguagem principal do projeto.
+* **Java 25:** Linguagem principal do projeto.
 * **Java HTTP Client:** para realizar as requisições web à API.
-* **Gson:** Biblioteca para facilitar o parsing da resposta JSON da API.
+* **Jackson:** Biblioteca para facilitar o parsing da resposta JSON da API.
 * **IDE IntelliJ:** Ambiente de desenvolvimento utilizado.
 
 ##  Como Executar
@@ -35,6 +35,10 @@ O objetivo principal foi aplicar e solidificar os conhecimentos adquiridos no m�
 1.  **Pré-requisitos:**
     * Ter o Java (JDK 17 ou superior) instalado e configurado no seu sistema.
     * Uma chave de API da [ExchangeRate-API](https://www.exchangerate-api.com/).
+    * Baixar os seguintes jars utilizados no projeto:
+      * [jackson databind 3.0.2](https://mvnrepository.com/artifact/tools.jackson.core/jackson-databind)
+      * [jackson core 3.0.2](https://mvnrepository.com/artifact/tools.jackson.core/jackson-core/3.0.2)
+      * [jackson annotations 3.0](https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations/3.0-rc5)
 
 2.  **Clone o repositório:**
     ```bash
@@ -48,6 +52,7 @@ O objetivo principal foi aplicar e solidificar os conhecimentos adquiridos no m�
 
 4.  **Execute a aplicação:**
     * Abra o projeto na sua IDE preferida (como IntelliJ ou Eclipse).
+    * Importar os jars baixados
     * Localize o arquivo principal dentro do diretório `src`.
     * Execute o método `main`.
 
