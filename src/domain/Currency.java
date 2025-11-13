@@ -1,4 +1,4 @@
-package utils;
+package domain;
 
 public enum Currency {
     AED("Dirham dos Emirados Árabes Unidos","United Arab Emirates"),

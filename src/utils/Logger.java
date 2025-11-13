@@ -1,5 +1,6 @@
-package models;
+package utils;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -7,13 +8,19 @@ import java.time.LocalDateTime;
 
 public class Logger {
     private PrintWriter writer;
+    private static final String LOG_FILE = "logs.txt";
 
     public Logger() {
         try {
-            writer = new PrintWriter(new FileWriter("logs.txt", true));
+            File logFile = new File(LOG_FILE);
+            if (!logFile.exists()) {
+                if (!logFile.createNewFile()) {
+                   throw new IOException("Arquivo de log não foi criado.");
+                }
+            }
+            writer = new PrintWriter(new FileWriter(logFile, true));
         } catch (IOException e) {
-            System.err.println("[Logger] Falha ao abrir arquivo de log: " + e.getMessage());
-            writer = null;
+            throw new RuntimeException(e.getMessage());
         }
     }
 
@@ -43,6 +50,7 @@ public class Logger {
 
         try {
             writer.println(line);
+            writer.flush();
         } catch (Exception e) {
             System.err.println("[Logger] Falha ao escrever log: " + e.getMessage());
         }
